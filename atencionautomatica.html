@@ -1,90 +1,142 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nivel 3: Automatización Integral | GoalOps</title>
+    <title>Atención Automática con IA | GoalOps</title>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
-        h1, h2, h3 { font-family: 'Poppins', sans-serif; }
-        .bg-goalops { background-color: #1e40af; }
+        h1, h2, h3, .font-poppins { font-family: 'Poppins', sans-serif; }
+        .bg-goalops-blue { background-color: #1e40af; }
+        .text-goalops-blue { color: #1e40af; }
+        .bg-action-green { background-color: #22c55e; }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900">
+<body class="bg-white text-gray-800 antialiased">
+    <div id="root"></div>
 
-    <nav class="p-6 bg-white shadow-md">
-        <div class="container mx-auto flex justify-between items-center">
-            <a href="index.html" class="text-blue-900 font-bold">← Volver a la web principal</a>
-            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">NIVEL 3: INTEGRAL</span>
-        </div>
-    </nav>
+    <script type="text/babel">
+        const logoUrl = "https://fgjpvszvaysblyhwwhip.supabase.co/storage/v1/object/public/logo%20nico/Gemini_Generated_Image_p5tqz3p5tqz3p5tq-ai-brush-removebg-rtha4sb7.png";
+        const whatsappBase = "https://wa.me/34613194656";
 
-    <header class="bg-goalops text-white py-20 px-6">
-        <div class="container mx-auto text-center max-w-4xl">
-            <h1 class="text-4xl md:text-5xl font-bold mb-6">Nivel 3: Automatización Integral</h1>
-            <p class="text-xl text-blue-100 mb-8">La solución más completa para clubes que quieren delegar toda la gestión administrativa.</p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="https://wa.me/34613194656?text=Hola%20GoalOps!%20Estoy%20interesado%20en%20el%20Nivel%203:%20Sistema%20Integral%20para%20mi%20club." class="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg transition shadow-xl text-lg">
-                    Quiero el sistema integral en mi club
-                </a>
+        const Header = () => (
+            <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+                    <a href="index.html" className="flex items-center gap-3">
+                        <img src={logoUrl} alt="GoalOps Logo" className="w-12 h-12 object-contain" />
+                        <div className="flex flex-col">
+                            <span className="text-2xl font-bold text-gray-900 leading-none">GoalOps</span>
+                        </div>
+                    </a>
+                    <a href="https://tally.so/r/D47EgX" className="bg-action-green text-white px-6 py-2.5 rounded-xl text-sm font-bold shadow-md hover:shadow-lg transition-all">Diagnóstico gratuito</a>
+                </div>
+            </header>
+        );
+
+        const Hero = () => (
+            <section className="relative pt-20 pb-24 overflow-hidden bg-white">
+                <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-green-50 rounded-full blur-[120px] opacity-40 z-0"></div>
+                <div className="max-w-7xl mx-auto px-6 relative z-10">
+                    <div className="max-w-3xl">
+                        <span className="inline-block bg-green-100 text-green-700 text-xs font-bold px-4 py-2 rounded-full mb-6 uppercase tracking-widest border border-green-200">Nivel 3: Inteligencia Artificial</span>
+                        <h1 className="text-5xl md:text-7xl font-bold text-gray-900 leading-tight mb-8">
+                            Un secretario que <span className="text-goalops-blue">nunca duerme.</span>
+                        </h1>
+                        <p className="text-xl text-gray-600 mb-10 leading-relaxed font-medium">
+                            Implementamos una IA personalizada por WhatsApp que resuelve el 90% de las dudas de padres e interesados al instante, 24 horas al día.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        );
+
+        const Features = () => (
+            <section className="py-24 bg-gray-50">
+                <div className="max-w-7xl mx-auto px-6">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+                        {[
+                            { icon: "🤖", title: "IA Entrenada", desc: "La IA conoce tus horarios, precios y normativa. Responde como si fueras tú." },
+                            { icon: "⚡", title: "Respuesta Inmediata", desc: "No más padres esperando 3 días por un WhatsApp. Dudas resueltas al segundo." },
+                            { icon: "🎯", title: "Filtro Inteligente", desc: "La IA solo te pasa las consultas que realmente requieren atención humana." }
+                        ].map((f, i) => (
+                            <div key={i} className="bg-white p-10 rounded-3xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                                <div className="text-5xl mb-6">{f.icon}</div>
+                                <h3 className="text-2xl font-bold mb-4">{f.title}</h3>
+                                <p className="text-gray-600 leading-relaxed">{f.desc}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+        );
+
+        const Footer = () => (
+            <footer className="bg-gray-950 text-white py-12 text-center">
+                <div className="max-w-7xl mx-auto px-6">
+                    <img src={logoUrl} alt="Logo" className="w-12 h-12 mx-auto mb-6 opacity-50" />
+                    <p className="text-gray-500 text-sm">© 2026 GoalOps Smart Football Solutions.</p>
+                </div>
+            </footer>
+        );
+
+        const App = () => (
+            <div className="min-h-screen flex flex-col">
+                <Header />
+                <main className="flex-grow">
+                    <Hero />
+                    <Features />
+                    
+                    {/* SECCIÓN 1: PROCESO - RECUPERADA */}
+                    <section className="py-24 bg-white border-t border-gray-100">
+                        <div className="max-w-4xl mx-auto px-6">
+                            <h2 className="text-4xl font-bold text-center mb-16 text-gray-900">
+                                ¿Cómo creamos tu asistente?
+                            </h2>
+                            <div className="space-y-12">
+                                {[
+                                    { step: "01", title: "Carga de datos", desc: "Nos pasas tus documentos, FAQs y toda la información relevante de tu club." },
+                                    { step: "02", title: "Entrenamiento IA", desc: "Entrenamos a la IA con tu tono de voz y tus reglas específicas por chat." },
+                                    { step: "03", title: "Atención 24/7", desc: "Conectamos la IA a tu WhatsApp y empieza a filtrar y responder dudas por ti." }
+                                ].map((s, i) => (
+                                    <div key={i} className="flex gap-8 items-start bg-gray-50 p-8 rounded-3xl border border-gray-100">
+                                        <span className="text-5xl font-black text-blue-200 leading-none">{s.step}</span>
+                                        <div>
+                                            <h4 className="text-2xl font-bold mb-2 text-gray-900">{s.title}</h4>
+                                            <p className="text-lg text-gray-600 leading-relaxed">{s.desc}</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* SECCIÓN 2: CTA FINAL - AJUSTADA A CHAT */}
+                    <section className="py-20 bg-blue-900 text-white">
+                        <div className="max-w-4xl mx-auto px-6 text-center">
+                            <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">¿Hablamos sobre tu futura IA?</h2>
+                            <p className="text-xl mb-12 text-blue-100">Pregúntanos por chat cómo podemos automatizar la atención de tu club. Sin compromisos ni llamadas pesadas.</p>
+                            <div className="flex flex-col sm:flex-row justify-center gap-6">
+                                <a href="https://tally.so/r/D47EgX" className="bg-action-green hover:bg-green-600 text-white font-bold py-5 px-12 rounded-2xl shadow-xl transform transition hover:scale-105 text-lg">
+                                    Hacer diagnóstico gratuito
+                                </a>
+                                <a href={`${whatsappBase}?text=Hola!%20Me%20interesa%20saber%20m%C3%A1s%20sobre%20vuestra%20IA%20de%20atenci%C3%B3n%20autom%C3%A1tica.`} className="bg-white text-blue-900 font-bold py-5 px-12 rounded-2xl shadow-xl transform transition hover:scale-105 text-lg flex items-center justify-center gap-2">
+                                    Preguntar por WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+                </main>
+                <Footer />
             </div>
-        </div>
-    </header>
+        );
 
-    <section class="py-16 container mx-auto px-6">
-        <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <div class="bg-red-50 p-8 rounded-2xl border border-red-100">
-                <h3 class="text-red-700 font-bold text-xl mb-4 italic">El problema:</h3>
-                <ul class="space-y-3 text-red-600">
-                    <li>❌ Saturación constante de mensajes y llamadas.</li>
-                    <li>❌ Atención deficiente fuera de horario comercial.</li>
-                    <li>❌ Personal perdiendo tiempo en tareas repetitivas.</li>
-                </ul>
-            </div>
-            <div class="bg-green-50 p-8 rounded-2xl border border-green-100 shadow-sm">
-                <h3 class="text-green-700 font-bold text-xl mb-4">La solución:</h3>
-                <ul class="space-y-3 text-green-700">
-                    <li>✅ El club funciona 24/7 de forma automática.</li>
-                    <li>✅ Atención inmediata sin necesidad de personal.</li>
-                    <li>✅ Sistema escalable para el crecimiento del club.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section class="bg-white py-16 px-6">
-        <div class="container mx-auto max-w-5xl">
-            <h2 class="text-3xl font-bold text-center mb-12 text-blue-900">¿Qué incluye este nivel?</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="p-6 border rounded-xl hover:shadow-md transition">
-                    <div class="text-blue-600 text-2xl mb-3">📱</div>
-                    <h4 class="font-bold mb-2 text-blue-900">Todo el Nivel 1 y 2</h4>
-                    <p class="text-sm text-gray-600">Inscripciones, pagos e impagos totalmente integrados.</p>
-                </div>
-                <div class="p-6 border rounded-xl hover:shadow-md transition">
-                    <div class="text-blue-600 text-2xl mb-3">🤖</div>
-                    <h4 class="font-bold mb-2 text-blue-900">Atención Automática</h4>
-                    <p class="text-sm text-gray-600">Gestión de consultas por WhatsApp y Web sin intervención humana.</p>
-                </div>
-                <div class="p-6 border rounded-xl hover:shadow-md transition">
-                    <div class="text-blue-600 text-2xl mb-3">❓</div>
-                    <h4 class="font-bold mb-2 text-blue-900">Respuestas FAQ</h4>
-                    <p class="text-sm text-gray-600">Resolución de dudas sobre horarios, precios, pruebas y normas.</p>
-                </div>
-                <div class="p-6 border rounded-xl hover:shadow-md transition">
-                    <div class="text-blue-600 text-2xl mb-3">👤</div>
-                    <h4 class="font-bold mb-2 text-blue-900">Derivación Inteligente</h4>
-                    <p class="text-sm text-gray-600">El sistema solo pasa al personal humano los casos complejos.</p>
-                </div>
-                <div class="p-6 border rounded-xl hover:shadow-md transition">
-                    <div class="text-blue-600 text-2xl mb-3">📈</div>
-                    <h4 class="font-bold mb-2 text-blue-900">Sistema Escalable</h4>
-                    <p class="text-sm text-gray-600">Preparado para absorber cualquier volumen de alumnos nuevos.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-20 bg-gray
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
