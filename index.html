@@ -5,15 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GoalOps | Automatización de Fútbol</title>
     
-    <!-- Scripts for React, ReactDOM and Babel Standalone -->
     <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     
     <style>
@@ -63,7 +60,9 @@
         const { useState, useEffect } = React;
 
         const logoUrl = "https://fgjpvszvaysblyhwwhip.supabase.co/storage/v1/object/public/logo%20nico/Gemini_Generated_Image_p5tqz3p5tqz3p5tq-ai-brush-removebg-rtha4sb7.png";
-        const whatsappUrl = "https://wa.me/34613194656"; // Reemplazar con el número real
+        
+        // WhatsApp URL Base
+        const whatsappBase = "https://wa.me/34613194656";
 
         const Header = () => (
             <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
@@ -85,10 +84,8 @@
                     </nav>
 
                     <div className="md:hidden">
-                        <a href="#contacto" className="bg-action-green text-white p-2.5 rounded-xl shadow-md">
-                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                            </svg>
+                        <a href={`${whatsappBase}?text=Hola!%20He%20visto%20vuestra%20web%20y%20quer%C3%ADa%20haceros%20una%20pregunta.`} className="bg-action-green text-white p-2.5 rounded-xl shadow-md">
+                            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.891 11.891-11.891 3.181 0 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.402 0 6.556-5.332 11.891-11.891 11.891-2.01 0-3.987-.508-5.747-1.472l-6.149 1.591zm6.303-3.64c1.554.922 3.141 1.408 4.8 1.408 5.404 0 9.802-4.398 9.802-9.802 0-2.62-1.021-5.083-2.875-6.937-1.854-1.854-4.317-2.875-6.927-2.875-5.404 0-9.802 4.398-9.802 9.802 0 1.815.498 3.585 1.439 5.12l-.995 3.636 3.73-.966z"/></svg>
                         </a>
                     </div>
                 </div>
@@ -174,7 +171,7 @@
                             </ul>
                             <div className="flex flex-col gap-3">
                                 <a href="inscripciones.html" className="w-full bg-gray-900 text-white py-3.5 rounded-xl font-bold text-center hover:bg-goalops-blue transition-colors text-sm">Empezar ahora</a>
-                                <a href={whatsappUrl} className="w-full bg-white text-gray-600 py-3.5 rounded-xl font-bold text-center border-2 border-gray-100 hover:border-goalops-blue transition-all text-sm">¿Tienes dudas? Habla con un asesor</a>
+                                <a href={`${whatsappBase}?text=Hola%20GoalOps!%20Tengo%20unas%20preguntas%20sobre%20las%20inscripciones%20autom%C3%A1ticas.`} className="w-full bg-white text-gray-600 py-3.5 rounded-xl font-bold text-center border-2 border-gray-100 hover:border-goalops-blue transition-all text-sm">Preguntar dudas por chat</a>
                             </div>
                         </div>
 
@@ -189,13 +186,13 @@
                                 <div className="text-3xl">650 € <span className="text-lg">/ 275 € mes</span></div>
                             </div>
                             <ul className="space-y-3 mb-10 flex-grow text-sm font-medium text-gray-700">
-                                {["Automatización de cobros", "Detección de impagos", "Recordatorios amigables", "Seguimiento interesados (+60€)", "Panel visual (+50€)", "Renovaciones (+50€)", "Gestión bajas (+40€)"].map((item, i) => (
+                                {["Automatización de cobros", "Detección de impagos", "Recordatorios amigables", "Seguimiento interesados", "Panel visual", "Renovaciones", "Gestión bajas"].map((item, i) => (
                                     <li key={i} className="flex gap-3"><span className="text-green-500 font-bold">✓</span>{item}</li>
                                 ))}
                             </ul>
                             <div className="flex flex-col gap-3">
                                 <a href="pagos.html" className="w-full bg-goalops-blue text-white py-3.5 rounded-xl font-bold text-center hover:bg-blue-800 transition-colors text-sm">Empezar ahora</a>
-                                <a href={whatsappUrl} className="w-full bg-white text-gray-600 py-3.5 rounded-xl font-bold text-center border-2 border-gray-100 hover:border-goalops-blue transition-all text-sm">¿Tienes dudas? Habla con un asesor</a>
+                                <a href={`${whatsappBase}?text=Hola%20GoalOps!%20Contadme%20un%20poco%20m%C3%A1s%20sobre%20el%20sistema%20de%20gesti%C3%B3n%20de%20pagos.`} className="w-full bg-white text-gray-600 py-3.5 rounded-xl font-bold text-center border-2 border-gray-100 hover:border-goalops-blue transition-all text-sm">Consultar por WhatsApp</a>
                             </div>
                         </div>
 
@@ -215,7 +212,7 @@
                             </ul>
                             <div className="flex flex-col gap-3">
                                 <a href="atencionautomatica.html" className="w-full bg-action-green text-white py-3.5 rounded-xl font-bold text-center hover:bg-green-600 transition-colors text-sm">Empezar ahora</a>
-                                <a href={whatsappUrl} className="w-full bg-white text-gray-600 py-3.5 rounded-xl font-bold text-center border-2 border-gray-100 hover:border-goalops-blue transition-all text-sm">¿Tienes dudas? Habla con un asesor</a>
+                                <a href={`${whatsappBase}?text=Hola!%20Querr%C3%ADa%20saber%20c%C3%B3mo%20funciona%20vuestra%20IA%20de%20atenci%C3%B3n%20al%20cliente.`} className="w-full bg-white text-gray-600 py-3.5 rounded-xl font-bold text-center border-2 border-gray-100 hover:border-goalops-blue transition-all text-sm">Resolver dudas por chat</a>
                             </div>
                         </div>
                     </div>
@@ -247,7 +244,7 @@
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
                         <div className="md:col-span-2">
                             <div className="flex items-center gap-4 mb-6">
-                                <img src="logo-goal0ps.png" alt="Logo" className="w-14 h-14 object-contain" />
+                                <img src={logoUrl} alt="Logo" className="w-14 h-14 object-contain" />
                                 <div>
                                     <span className="text-2xl font-bold block">GoalOps</span>
                                     <span className="text-[10px] text-green-500 uppercase font-bold tracking-widest">Football Systems</span>
@@ -267,18 +264,16 @@
                             <h4 className="font-bold text-lg mb-6 text-white">Compañía</h4>
                             <ul className="space-y-4 text-gray-400 font-medium">
                                 <li><a href="#quienes-somos" className="hover:text-green-500 transition">Nosotros</a></li>
-                                {/* Enlace Instagram con Icono */}
                                 <li>
                                     <a href="https://instagram.com/goal0ps" target="_blank" className="hover:text-pink-500 transition flex items-center gap-2">
                                         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                                         Instagram
                                     </a>
                                 </li>
-                                {/* WhatsApp Footer */}
                                 <li>
-                                    <a href="https://wa.me/34613194656" className="hover:text-green-500 transition flex items-center gap-2">
+                                    <a href={`${whatsappBase}?text=Hola!%20He%20visto%20vuestra%20web%20y%20quer%C3%ADa%20haceros%20una%20pregunta.`} className="hover:text-green-500 transition flex items-center gap-2">
                                         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.891 11.891-11.891 3.181 0 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.402 0 6.556-5.332 11.891-11.891 11.891-2.01 0-3.987-.508-5.747-1.472l-6.149 1.591zm6.303-3.64c1.554.922 3.141 1.408 4.8 1.408 5.404 0 9.802-4.398 9.802-9.802 0-2.62-1.021-5.083-2.875-6.937-1.854-1.854-4.317-2.875-6.927-2.875-5.404 0-9.802 4.398-9.802 9.802 0 1.815.498 3.585 1.439 5.12l-.995 3.636 3.73-.966z"/></svg>
-                                        Contacto Directo
+                                        Charlar por WhatsApp
                                     </a>
                                 </li>
                             </ul>
@@ -305,13 +300,12 @@
                             <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">Lleva tu club al siguiente nivel</h2>
                             <p className="text-lg text-blue-100 mb-10 max-w-2xl mx-auto font-medium">Recupera tu tiempo y profesionaliza tu entidad en menos de 15 días.</p>
                             <div className="flex flex-col sm:flex-row justify-center gap-6">
-                                {/* BOTÓN DE DIAGNÓSTICO GRATUITO */}
                                 <a href="https://tally.so/r/D47EgX" target="_blank" className="bg-white text-blue-900 font-bold py-4 px-10 rounded-xl shadow-lg transform transition hover:scale-105 text-lg flex items-center justify-center gap-2">
                                     <span>📋</span> Obtener Diagnóstico Gratuito
                                 </a>
-                                <a href="https://wa.me/34613194656" className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-10 rounded-xl shadow-lg transform transition hover:scale-105 text-lg flex items-center justify-center gap-2">
+                                <a href={`${whatsappBase}?text=Hola%20GoalOps!%20Me%20gustar%C3%ADa%20que%20habl%C3%A1ramos%20para%20profesionalizar%20mi%20club.`} className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-10 rounded-xl shadow-lg transform transition hover:scale-105 text-lg flex items-center justify-center gap-2">
                                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.891 11.891-11.891 3.181 0 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.402 0 6.556-5.332 11.891-11.891 11.891-2.01 0-3.987-.508-5.747-1.472l-6.149 1.591zm6.303-3.64c1.554.922 3.141 1.408 4.8 1.408 5.404 0 9.802-4.398 9.802-9.802 0-2.62-1.021-5.083-2.875-6.937-1.854-1.854-4.317-2.875-6.927-2.875-5.404 0-9.802 4.398-9.802 9.802 0 1.815.498 3.585 1.439 5.12l-.995 3.636 3.73-.966z"/></svg>
-                                    Hablar por WhatsApp
+                                    Hablar con nosotros
                                 </a>
                             </div>
                         </div>
