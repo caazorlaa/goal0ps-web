@@ -14,54 +14,39 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        h1, h2, h3, h4, .font-poppins {
-            font-family: 'Poppins', sans-serif;
-        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, .font-poppins { font-family: 'Poppins', sans-serif; }
         .bg-goalops-blue { background-color: #1e40af; }
         .text-goalops-blue { color: #1e40af; }
         .bg-action-green { background-color: #22c55e; }
         .text-action-green { color: #22c55e; }
         
-        section[id] {
-            scroll-margin-top: 5rem;
+        .football-grass-hero {
+            background-image: linear-gradient(to right, rgba(255,255,255,0.95) 30%, rgba(255,255,255,0.7)), 
+                              url('https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-position: center bottom;
         }
-        
-        ::-webkit-scrollbar {
-            width: 10px;
+
+        .football-grass-footer {
+            background-image: linear-gradient(to bottom, rgba(30, 64, 175, 0.9), rgba(15, 23, 42, 0.95)), 
+                              url('https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-position: center;
         }
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #1e40af;
-            border-radius: 5px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #1e3a8a;
-        }
+
+        section[id] { scroll-margin-top: 5rem; }
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #1e40af; border-radius: 5px; }
     </style>
-<script type="importmap">
-{
-  "imports": {
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3"
-  }
-}
-</script>
 </head>
 <body class="bg-white text-gray-800 antialiased">
     <div id="root"></div>
 
     <script type="text/babel">
-        const { useState, useEffect } = React;
-
+        const { useState } = React;
         const logoUrl = "https://fgjpvszvaysblyhwwhip.supabase.co/storage/v1/object/public/logo%20nico/Gemini_Generated_Image_p5tqz3p5tqz3p5tq-ai-brush-removebg-rtha4sb7.png";
-        
-        // WhatsApp URL Base
         const whatsappBase = "https://wa.me/34613194656";
 
         const Header = () => (
@@ -76,28 +61,20 @@
                             <span className="text-[9px] text-goalops-blue uppercase tracking-[0.15em] font-black mt-1">Smart Football Solutions</span>
                         </div>
                     </div>
-
                     <nav className="hidden md:flex items-center gap-8">
                         <a href="#servicios" className="text-sm font-semibold text-gray-600 hover:text-goalops-blue transition-colors">Servicios</a>
                         <a href="#quienes-somos" className="text-sm font-semibold text-gray-600 hover:text-goalops-blue transition-colors">Nosotros</a>
                         <a href="https://tally.so/r/D47EgX" className="bg-action-green text-white px-6 py-2.5 rounded-xl text-sm font-bold shadow-md hover:shadow-lg transition-all active:scale-95">Hacer diagnóstico gratuito</a>
                     </nav>
-
-                    <div className="md:hidden">
-                        <a href={`${whatsappBase}?text=Hola!%20He%20visto%20vuestra%20web%20y%20quer%C3%ADa%20haceros%20una%20pregunta.`} className="bg-action-green text-white p-2.5 rounded-xl shadow-md">
-                            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.891 11.891-11.891 3.181 0 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.402 0 6.556-5.332 11.891-11.891 11.891-2.01 0-3.987-.508-5.747-1.472l-6.149 1.591zm6.303-3.64c1.554.922 3.141 1.408 4.8 1.408 5.404 0 9.802-4.398 9.802-9.802 0-2.62-1.021-5.083-2.875-6.937-1.854-1.854-4.317-2.875-6.927-2.875-5.404 0-9.802 4.398-9.802 9.802 0 1.815.498 3.585 1.439 5.12l-.995 3.636 3.73-.966z"/></svg>
-                        </a>
-                    </div>
                 </div>
             </header>
         );
 
         const Hero = () => (
-            <section className="relative bg-white pt-20 pb-24 md:pt-32 md:pb-48 overflow-hidden">
-                <div className="absolute top-0 right-0 -mr-20 -mt-20 w-[800px] h-[800px] bg-blue-50 rounded-full blur-[120px] opacity-40 z-0"></div>
+            <section className="relative football-grass-hero pt-20 pb-24 md:pt-32 md:pb-48 overflow-hidden">
                 <div className="max-w-7xl mx-auto px-6 relative z-10">
                     <div className="max-w-4xl">
-                        <div className="inline-flex items-center gap-2 bg-blue-50 text-goalops-blue font-bold text-xs uppercase tracking-[0.2em] mb-6 px-4 py-2 rounded-full border border-blue-100">
+                        <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur text-goalops-blue font-bold text-xs uppercase tracking-[0.2em] mb-6 px-4 py-2 rounded-full border border-blue-100 shadow-sm">
                             <span className="w-2 h-2 rounded-full bg-goalops-blue"></span>
                             Automatización inteligente para fútbol
                         </div>
@@ -105,14 +82,12 @@
                             Digitaliza tu club. <br/>
                             <span className="text-goalops-blue underline decoration-action-green/30 decoration-8 underline-offset-8">Gana tiempo</span> real.
                         </h1>
-                        <p className="text-xl md:text-2xl text-gray-600 mb-12 leading-relaxed max-w-2xl font-medium">
+                        <p className="text-xl md:text-2xl text-gray-700 mb-12 leading-relaxed max-w-2xl font-medium">
                             Automatizamos inscripciones, pagos y atención al cliente para que tu club ahorre horas de oficina y reduzca impagos al mínimo.
                         </p>
-                        <div className="flex flex-col sm:flex-row items-center gap-6">
-                            <a href="https://tally.so/r/D47EgX" className="group w-full sm:w-auto bg-action-green hover:bg-green-600 text-white font-extrabold py-6 px-12 rounded-2xl shadow-xl shadow-green-200 transform transition-all active:scale-95 flex items-center justify-center gap-3 text-xl">
-                                🚀 Hacer diagnóstico gratuito
-                            </a>
-                        </div>
+                        <a href="https://tally.so/r/D47EgX" className="group w-full sm:w-auto bg-action-green hover:bg-green-600 text-white font-extrabold py-6 px-12 rounded-2xl shadow-xl transform transition-all active:scale-95 flex items-center justify-center gap-3 text-xl">
+                            🚀 Hacer diagnóstico gratuito
+                        </a>
                     </div>
                 </div>
             </section>
@@ -123,17 +98,16 @@
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
-                            La mayoría de clubes no tienen un problema de fútbol.
-                            <span className="block text-red-600 mt-2">Tienen un problema de gestión.</span>
+                            La mayoría de clubes tienen un <span className="text-red-600">problema de gestión.</span>
                         </h2>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {[
-                            { icon: "📩", title: "Demasiados mensajes y tareas manuales", desc: "WhatsApp, correos, llamadas… la gestión diaria consume tiempo y energía inmensos." },
-                            { icon: "💸", title: "Pagos desordenados e impagos constantes", desc: "No hay un sistema claro y acabas persiguiendo a las familias cada mes por 30 euros." },
-                            { icon: "📋", title: "Inscripciones caóticas y datos incompletos", desc: "Errores al apuntar nombres, información incompleta y procesos diferentes cada temporada." }
+                            { icon: "📩", title: "Demasiados mensajes", desc: "WhatsApp y correos consumen el tiempo que deberías pasar en el campo." },
+                            { icon: "💸", title: "Pagos desordenados", desc: "Sin un sistema claro, acabas persiguiendo familias cada mes." },
+                            { icon: "📋", title: "Inscripciones caóticas", desc: "Errores al apuntar nombres e información incompleta cada temporada." }
                         ].map((p, idx) => (
-                            <div key={idx} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                            <div key={idx} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
                                 <div className="text-4xl mb-6">{p.icon}</div>
                                 <h3 className="text-xl font-bold mb-4">{p.title}</h3>
                                 <p className="text-gray-600 leading-relaxed">{p.desc}</p>
@@ -145,74 +119,90 @@
         );
 
         const ServicesSection = () => (
-            <section id="servicios" className="py-24 bg-gray-50">
+            <section id="servicios" className="py-24 bg-white">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">Nuestros Niveles de Servicio</h2>
-                        <p className="text-gray-600 max-w-2xl mx-auto text-lg font-medium">Sistemas escalables diseñados para adaptarse a la realidad de tu club.</p>
                     </div>
-
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
                         
-                        {/* Level 1 */}
+                        {/* Nivel 1 */}
                         <div className="bg-white rounded-3xl shadow-sm border border-gray-100 p-8 flex flex-col hover:shadow-lg transition-all duration-300">
-                            <div className="mb-8">
+                            <div className="mb-6">
                                 <span className="bg-blue-50 text-goalops-blue text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full border border-blue-100">Nivel 1</span>
                                 <h3 className="text-2xl font-bold mt-4 mb-2">Inscripciones</h3>
                             </div>
                             <div className="mb-8 p-6 bg-gray-50 rounded-2xl border border-gray-100">
-                                <div className="text-4xl font-black text-gray-900 mb-1">395 € <span className="text-xs font-bold text-gray-400">setup</span></div>
-                                <div className="text-xl font-bold text-goalops-blue">150 € / mes</div>
+                                <div className="text-4xl font-black text-gray-900 mb-1">395 € <span className="text-xs font-bold text-gray-400 uppercase">setup</span></div>
+                                <div className="text-xl font-bold text-goalops-blue">150 € <span className="text-sm text-gray-500">/ mes</span></div>
                             </div>
                             <ul className="space-y-4 mb-10 flex-grow text-sm font-medium text-gray-700">
-                                {["Formularios inteligentes WhatsApp/Web", "Validación de datos automática", "Confirmaciones instantáneas", "Base de datos centralizada"].map((item, i) => (
+                                {["Formularios inteligentes WhatsApp/Web", "Validación de datos automática", "Base de datos centralizada"].map((item, i) => (
                                     <li key={i} className="flex gap-3"><span className="text-action-green font-bold">✓</span>{item}</li>
                                 ))}
                             </ul>
                             <div className="flex flex-col gap-3">
-                                <a href="inscripciones.html" className="w-full bg-gray-900 text-white py-3.5 rounded-xl font-bold text-center hover:bg-goalops-blue transition-colors text-sm">Empezar ahora</a>
-                                <a href={`${whatsappBase}?text=Hola%20GoalOps!%20Tengo%20unas%20preguntas%20sobre%20las%20inscripciones%20autom%C3%A1ticas.`} className="w-full bg-white text-gray-600 py-3.5 rounded-xl font-bold text-center border-2 border-gray-100 hover:border-goalops-blue transition-all text-sm">Preguntar dudas por chat</a>
+                                <a href="https://tally.so/r/D47EgX" className="w-full bg-gray-900 text-white py-3.5 rounded-xl font-bold text-center text-sm">Empezar ahora</a>
+                                <a href={`${whatsappBase}?text=Hola!%20Querr%C3%ADa%20informaci%C3%B3n%20sobre%20el%20Nivel%201%20de%20Inscripciones.`} className="w-full bg-white text-gray-600 py-3 rounded-xl font-bold text-center border border-gray-200 hover:border-goalops-blue transition-all text-xs">Preguntar por WhatsApp</a>
                             </div>
                         </div>
 
-                        {/* Level 2 */}
+                        {/* Nivel 2 */}
                         <div className="bg-white rounded-3xl shadow-xl border-2 border-goalops-blue p-8 flex flex-col relative transform lg:scale-105 z-10">
                             <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-goalops-blue text-white text-[10px] font-bold uppercase tracking-widest px-5 py-2 rounded-full shadow-lg">Solución Financiera</div>
-                            <div className="mb-8">
+                            <div className="mb-4">
                                 <span className="bg-blue-100 text-goalops-blue text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full">Nivel 2</span>
                                 <h3 className="text-2xl font-bold mt-4 mb-2">Pagos e Impagos</h3>
                             </div>
-                            <div className="p-4 bg-blue-50 rounded-2xl border border-blue-100 mb-8 font-bold">
-                                <div className="text-3xl">650 € <span className="text-lg">/ 275 € mes</span></div>
+                            <div className="space-y-3 mb-6">
+                                <div className="p-4 bg-blue-50 rounded-2xl border border-blue-100">
+                                    <div className="text-xs font-bold text-goalops-blue uppercase mb-1">Servicio Único</div>
+                                    <div className="text-3xl font-black">499€ <span className="text-xs text-gray-400">Setup</span></div>
+                                    <div className="text-lg font-bold text-goalops-blue">215€ / mes</div>
+                                </div>
+                                <div className="px-4 py-2 bg-gray-50 rounded-xl text-[10px] font-bold text-gray-500 border border-gray-100">
+                                    PACK (INCLUYE NIVEL 1): 650€ SETUP | 275€/MES
+                                </div>
                             </div>
-                            <ul className="space-y-3 mb-10 flex-grow text-sm font-medium text-gray-700">
-                                {["Automatización de cobros", "Detección de impagos", "Recordatorios amigables", "Seguimiento interesados", "Panel visual", "Renovaciones", "Gestión bajas"].map((item, i) => (
+                            <ul className="space-y-3 mb-6 text-sm font-medium text-gray-700">
+                                {["Registro actualizado de pagos", "Confirmaciones de cobro", "Panel visual", "Recordatorios amigables"].map((item, i) => (
                                     <li key={i} className="flex gap-3"><span className="text-green-500 font-bold">✓</span>{item}</li>
                                 ))}
                             </ul>
+                            <div className="mb-8 pt-4 border-t border-blue-100 flex-grow">
+                                <span className="text-xs font-bold text-goalops-blue uppercase tracking-widest mb-2 block">Extras</span>
+                                <p className="text-xs font-bold text-gray-700">+ Automatización de cobros (+100€)</p>
+                            </div>
                             <div className="flex flex-col gap-3">
-                                <a href="pagos.html" className="w-full bg-goalops-blue text-white py-3.5 rounded-xl font-bold text-center hover:bg-blue-800 transition-colors text-sm">Empezar ahora</a>
-                                <a href={`${whatsappBase}?text=Hola%20GoalOps!%20Contadme%20un%20poco%20m%C3%A1s%20sobre%20el%20sistema%20de%20gesti%C3%B3n%20de%20pagos.`} className="w-full bg-white text-gray-600 py-3.5 rounded-xl font-bold text-center border-2 border-gray-100 hover:border-goalops-blue transition-all text-sm">Consultar por WhatsApp</a>
+                                <a href="https://tally.so/r/D47EgX" className="w-full bg-goalops-blue text-white py-3.5 rounded-xl font-bold text-center text-sm">Empezar ahora</a>
+                                <a href={`${whatsappBase}?text=Hola!%20Querr%C3%ADa%20informaci%C3%B3n%20sobre%20el%20Nivel%202%20de%20Pagos.`} className="w-full bg-white text-gray-600 py-3 rounded-xl font-bold text-center border border-gray-200 hover:border-goalops-blue transition-all text-xs">Preguntar por WhatsApp</a>
                             </div>
                         </div>
 
-                        {/* Level 3 */}
-                        <div className="bg-white rounded-3xl shadow-sm border border-gray-100 p-8 flex flex-col h-full hover:shadow-lg transition-all duration-300">
-                            <div className="mb-8">
+                        {/* Nivel 3 */}
+                        <div className="bg-white rounded-3xl shadow-sm border border-gray-100 p-8 flex flex-col h-full">
+                            <div className="mb-6">
                                 <span className="bg-blue-50 text-goalops-blue text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full border border-blue-100">Nivel 3</span>
                                 <h3 className="text-2xl font-bold mt-4 mb-2">Delegación Total</h3>
                             </div>
-                            <div className="p-4 bg-green-50 rounded-2xl border border-green-100 mb-8 font-bold">
-                                <div className="text-3xl">1.250 € <span className="text-lg">/ 495 € mes</span></div>
+                            <div className="space-y-3 mb-8">
+                                <div className="p-4 bg-green-50 rounded-2xl border border-green-100">
+                                    <div className="text-xs font-bold text-action-green uppercase mb-1">Servicio Único</div>
+                                    <div className="text-3xl font-black">780€ <span className="text-xs text-gray-400">Setup</span></div>
+                                    <div className="text-lg font-bold text-action-green">345€ / mes</div>
+                                </div>
+                                <div className="px-4 py-2 bg-gray-50 rounded-xl text-[10px] font-bold text-gray-500 border border-gray-100">
+                                    PACK COMPLETO: 1.250€ SETUP | 495€/MES
+                                </div>
                             </div>
                             <ul className="space-y-4 mb-10 flex-grow text-sm font-medium text-gray-700">
-                                {["IA de atención por WhatsApp 24/7", "Resolución de dudas (FAQ)", "Filtro de llamadas humanas", "Escalabilidad garantizada"].map((item, i) => (
+                                {["IA de atención por WhatsApp 24/7", "Derivación a humano solo si es necesario", "Escalabilidad garantizada"].map((item, i) => (
                                     <li key={i} className="flex gap-3"><span className="text-action-green font-bold">✓</span>{item}</li>
                                 ))}
                             </ul>
                             <div className="flex flex-col gap-3">
-                                <a href="atencionautomatica.html" className="w-full bg-action-green text-white py-3.5 rounded-xl font-bold text-center hover:bg-green-600 transition-colors text-sm">Empezar ahora</a>
-                                <a href={`${whatsappBase}?text=Hola!%20Querr%C3%ADa%20saber%20c%C3%B3mo%20funciona%20vuestra%20IA%20de%20atenci%C3%B3n%20al%20cliente.`} className="w-full bg-white text-gray-600 py-3.5 rounded-xl font-bold text-center border-2 border-gray-100 hover:border-goalops-blue transition-all text-sm">Resolver dudas por chat</a>
+                                <a href="https://tally.so/r/D47EgX" className="w-full bg-action-green text-white py-3.5 rounded-xl font-bold text-center text-sm">Empezar ahora</a>
+                                <a href={`${whatsappBase}?text=Hola!%20Querr%C3%ADa%20informaci%C3%B3n%20sobre%20el%20Nivel%203%20de%20Delegaci%C3%B3n%20Total.`} className="w-full bg-white text-gray-600 py-3 rounded-xl font-bold text-center border border-gray-200 hover:border-goalops-blue transition-all text-xs">Preguntar por WhatsApp</a>
                             </div>
                         </div>
                     </div>
@@ -221,24 +211,21 @@
         );
 
         const AboutSection = () => (
-            <section id="quienes-somos" className="py-24 bg-white">
-                <div className="max-w-7xl mx-auto px-6">
-                    <div className="max-w-4xl mx-auto">
-                        <div className="text-center mb-16">
-                            <span className="text-goalops-blue font-bold text-sm uppercase tracking-widest">Quiénes Somos</span>
-                            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mt-4 mb-8">Especialistas en automatización para fútbol</h2>
-                            <div className="w-20 h-1.5 bg-action-green mx-auto rounded-full"></div>
-                        </div>
-                        <div className="space-y-10 text-xl text-gray-600 leading-relaxed font-light">
-                            <p>GoalOps nace tras ver cómo la mayoría de clubes pierden tiempo y dinero en tareas que podrían estar automatizadas. Nacemos del barro, de la gestión real de campos de fútbol.</p>
-                            <p className="bg-gray-50 p-10 rounded-3xl border-l-8 border-goalops-blue italic text-gray-800 font-normal">"El club debe trabajar para ti, no al revés."</p>
-                        </div>
+            <section id="quienes-somos" className="py-24 bg-gray-50">
+                <div className="max-w-4xl mx-auto px-6 text-center">
+                    <span className="text-goalops-blue font-bold text-sm uppercase tracking-widest">Quiénes Somos</span>
+                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mt-4 mb-8 tracking-tight">Especialistas en automatización</h2>
+                    <p className="text-xl text-gray-600 leading-relaxed font-light mb-10">
+                        GoalOps nace tras ver cómo los clubes pierden tiempo en tareas manuales. Nacemos de la gestión real de campos de fútbol para que tú solo te preocupes de lo que pasa en el césped.
+                    </p>
+                    <div className="bg-white p-8 rounded-3xl border-l-8 border-goalops-blue italic text-gray-800 text-lg shadow-sm">
+                        "El club debe trabajar para ti, no al revés."
                     </div>
                 </div>
             </section>
         );
 
-       const Footer = () => (
+        const Footer = () => (
             <footer className="bg-gray-950 text-white pt-20 pb-10">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
@@ -253,27 +240,24 @@
                             <p className="text-gray-400 text-lg mb-8 max-w-sm">Automatización inteligente. <br/> <span className="font-bold text-green-500">Menos gestión. Más fútbol.</span></p>
                         </div>
                         <div>
-                            <h4 className="font-bold text-lg mb-6 text-white">Servicios</h4>
+                            <h4 className="font-bold text-lg mb-6">Servicios</h4>
                             <ul className="space-y-4 text-gray-400 font-medium">
-                                <li><a href="inscripciones.html" className="hover:text-green-500 transition">Inscripciones</a></li>
-                                <li><a href="pagos.html" className="hover:text-green-500 transition">Pagos e Impagos</a></li>
-                                <li><a href="atencionautomatica.html" className="hover:text-green-500 transition">Atención Automática</a></li>
+                                <li><a href="#servicios" className="hover:text-green-500 transition">Inscripciones</a></li>
+                                <li><a href="#servicios" className="hover:text-green-500 transition">Pagos e Impagos</a></li>
+                                <li><a href="#servicios" className="hover:text-green-500 transition">Atención Automática</a></li>
                             </ul>
                         </div>
                         <div>
-                            <h4 className="font-bold text-lg mb-6 text-white">Compañía</h4>
+                            <h4 className="font-bold text-lg mb-6">Contacto</h4>
                             <ul className="space-y-4 text-gray-400 font-medium">
-                                <li><a href="#quienes-somos" className="hover:text-green-500 transition">Nosotros</a></li>
                                 <li>
                                     <a href="https://instagram.com/goal0ps" target="_blank" className="hover:text-pink-500 transition flex items-center gap-2">
-                                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                                         Instagram
                                     </a>
                                 </li>
                                 <li>
-                                    <a href={`${whatsappBase}?text=Hola!%20He%20visto%20vuestra%20web%20y%20quer%C3%ADa%20haceros%20una%20pregunta.`} className="hover:text-green-500 transition flex items-center gap-2">
-                                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.891 11.891-11.891 3.181 0 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.402 0 6.556-5.332 11.891-11.891 11.891-2.01 0-3.987-.508-5.747-1.472l-6.149 1.591zm6.303-3.64c1.554.922 3.141 1.408 4.8 1.408 5.404 0 9.802-4.398 9.802-9.802 0-2.62-1.021-5.083-2.875-6.937-1.854-1.854-4.317-2.875-6.927-2.875-5.404 0-9.802 4.398-9.802 9.802 0 1.815.498 3.585 1.439 5.12l-.995 3.636 3.73-.966z"/></svg>
-                                        Charlar por WhatsApp
+                                    <a href={whatsappBase} className="hover:text-green-500 transition flex items-center gap-2">
+                                        WhatsApp: 613 194 656
                                     </a>
                                 </li>
                             </ul>
@@ -287,30 +271,23 @@
         );
 
         const App = () => (
-            <div className="min-h-screen flex flex-col">
+            <div className="min-h-screen">
                 <Header />
-                <main className="flex-grow">
-                    <Hero />
-                    <ProblemSection />
-                    <ServicesSection />
-                    <AboutSection />
-                    
-                    <section id="contacto" className="py-20 bg-blue-900 text-white">
-                        <div className="max-w-4xl mx-auto px-6 text-center">
-                            <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">Lleva tu club al siguiente nivel</h2>
-                            <p className="text-lg text-blue-100 mb-10 max-w-2xl mx-auto font-medium">Recupera tu tiempo y profesionaliza tu entidad en menos de 15 días.</p>
-                            <div className="flex flex-col sm:flex-row justify-center gap-6">
-                                <a href="https://tally.so/r/D47EgX" target="_blank" className="bg-white text-blue-900 font-bold py-4 px-10 rounded-xl shadow-lg transform transition hover:scale-105 text-lg flex items-center justify-center gap-2">
-                                    <span>📋</span> Obtener Diagnóstico Gratuito
-                                </a>
-                                <a href={`${whatsappBase}?text=Hola%20GoalOps!%20Me%20gustar%C3%ADa%20que%20habl%C3%A1ramos%20para%20profesionalizar%20mi%20club.`} className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-10 rounded-xl shadow-lg transform transition hover:scale-105 text-lg flex items-center justify-center gap-2">
-                                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.891 11.891-11.891 3.181 0 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.402 0 6.556-5.332 11.891-11.891 11.891-2.01 0-3.987-.508-5.747-1.472l-6.149 1.591zm6.303-3.64c1.554.922 3.141 1.408 4.8 1.408 5.404 0 9.802-4.398 9.802-9.802 0-2.62-1.021-5.083-2.875-6.937-1.854-1.854-4.317-2.875-6.927-2.875-5.404 0-9.802 4.398-9.802 9.802 0 1.815.498 3.585 1.439 5.12l-.995 3.636 3.73-.966z"/></svg>
-                                    Hablar con nosotros
-                                </a>
-                            </div>
+                <Hero />
+                <ProblemSection />
+                <ServicesSection />
+                <AboutSection />
+                
+                <section id="contacto" className="football-grass-footer py-24 text-white text-center">
+                    <div className="max-w-4xl mx-auto px-6">
+                        <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight">Profesionaliza tu club hoy</h2>
+                        <p className="text-xl text-blue-100 mb-12 font-medium">Recupera tu tiempo y reduce impagos en menos de 15 días.</p>
+                        <div className="flex flex-col sm:flex-row justify-center gap-6">
+                            <a href="https://tally.so/r/D47EgX" className="bg-white text-blue-900 font-bold py-4 px-10 rounded-2xl shadow-xl hover:scale-105 transition text-lg">Hacer Diagnóstico</a>
+                            <a href={whatsappBase} className="bg-action-green text-white font-bold py-4 px-10 rounded-2xl shadow-xl hover:scale-105 transition text-lg">Hablar por WhatsApp</a>
                         </div>
-                    </section>
-                </main>
+                    </div>
+                </section>
                 <Footer />
             </div>
         );
