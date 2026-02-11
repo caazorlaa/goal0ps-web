@@ -126,7 +126,7 @@
                     </div>
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
                         
-                        {/* Nivel 1 */}
+                        {/* Nivel 1 - Vinculado a inscripciones.html */}
                         <div className="bg-white rounded-3xl shadow-sm border border-gray-100 p-8 flex flex-col hover:shadow-lg transition-all duration-300">
                             <div className="mb-6">
                                 <span className="bg-blue-50 text-goalops-blue text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full border border-blue-100">Nivel 1</span>
@@ -142,12 +142,12 @@
                                 ))}
                             </ul>
                             <div className="flex flex-col gap-3">
-                                <a href="https://tally.so/r/D47EgX" className="w-full bg-gray-900 text-white py-3.5 rounded-xl font-bold text-center text-sm">Empezar ahora</a>
+                                <a href="inscripciones.html" className="w-full bg-gray-900 text-white py-3.5 rounded-xl font-bold text-center text-sm hover:bg-gray-800 transition-colors">Empezar ahora</a>
                                 <a href={`${whatsappBase}?text=Hola!%20Querr%C3%ADa%20informaci%C3%B3n%20sobre%20el%20Nivel%201%20de%20Inscripciones.`} className="w-full bg-white text-gray-600 py-3 rounded-xl font-bold text-center border border-gray-200 hover:border-goalops-blue transition-all text-xs">Preguntar por WhatsApp</a>
                             </div>
                         </div>
 
-                        {/* Nivel 2 */}
+                        {/* Nivel 2 - Vinculado a pagos.html */}
                         <div className="bg-white rounded-3xl shadow-xl border-2 border-goalops-blue p-8 flex flex-col relative transform lg:scale-105 z-10">
                             <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-goalops-blue text-white text-[10px] font-bold uppercase tracking-widest px-5 py-2 rounded-full shadow-lg">Solución Financiera</div>
                             <div className="mb-4">
@@ -174,12 +174,12 @@
                                 <p className="text-xs font-bold text-gray-700">+ Automatización de cobros (+100€)</p>
                             </div>
                             <div className="flex flex-col gap-3">
-                                <a href="https://tally.so/r/D47EgX" className="w-full bg-goalops-blue text-white py-3.5 rounded-xl font-bold text-center text-sm">Empezar ahora</a>
+                                <a href="pagos.html" className="w-full bg-goalops-blue text-white py-3.5 rounded-xl font-bold text-center text-sm hover:opacity-90 transition-opacity">Empezar ahora</a>
                                 <a href={`${whatsappBase}?text=Hola!%20Querr%C3%ADa%20informaci%C3%B3n%20sobre%20el%20Nivel%202%20de%20Pagos.`} className="w-full bg-white text-gray-600 py-3 rounded-xl font-bold text-center border border-gray-200 hover:border-goalops-blue transition-all text-xs">Preguntar por WhatsApp</a>
                             </div>
                         </div>
 
-                        {/* Nivel 3 */}
+                        {/* Nivel 3 - Vinculado a atencionautomatica.html */}
                         <div className="bg-white rounded-3xl shadow-sm border border-gray-100 p-8 flex flex-col h-full">
                             <div className="mb-6">
                                 <span className="bg-blue-50 text-goalops-blue text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full border border-blue-100">Nivel 3</span>
@@ -201,7 +201,7 @@
                                 ))}
                             </ul>
                             <div className="flex flex-col gap-3">
-                                <a href="https://tally.so/r/D47EgX" className="w-full bg-action-green text-white py-3.5 rounded-xl font-bold text-center text-sm">Empezar ahora</a>
+                                <a href="atencionautomatica.html" className="w-full bg-action-green text-white py-3.5 rounded-xl font-bold text-center text-sm hover:bg-green-600 transition-colors">Empezar ahora</a>
                                 <a href={`${whatsappBase}?text=Hola!%20Querr%C3%ADa%20informaci%C3%B3n%20sobre%20el%20Nivel%203%20de%20Delegaci%C3%B3n%20Total.`} className="w-full bg-white text-gray-600 py-3 rounded-xl font-bold text-center border border-gray-200 hover:border-goalops-blue transition-all text-xs">Preguntar por WhatsApp</a>
                             </div>
                         </div>
@@ -273,21 +273,23 @@
         const App = () => (
             <div className="min-h-screen">
                 <Header />
-                <Hero />
-                <ProblemSection />
-                <ServicesSection />
-                <AboutSection />
-                
-                <section id="contacto" className="football-grass-footer py-24 text-white text-center">
-                    <div className="max-w-4xl mx-auto px-6">
-                        <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight">Profesionaliza tu club hoy</h2>
-                        <p className="text-xl text-blue-100 mb-12 font-medium">Recupera tu tiempo y reduce impagos en menos de 15 días.</p>
-                        <div className="flex flex-col sm:flex-row justify-center gap-6">
-                            <a href="https://tally.so/r/D47EgX" className="bg-white text-blue-900 font-bold py-4 px-10 rounded-2xl shadow-xl hover:scale-105 transition text-lg">Hacer Diagnóstico</a>
-                            <a href={whatsappBase} className="bg-action-green text-white font-bold py-4 px-10 rounded-2xl shadow-xl hover:scale-105 transition text-lg">Hablar por WhatsApp</a>
+                <main>
+                    <Hero />
+                    <ProblemSection />
+                    <ServicesSection />
+                    <AboutSection />
+                    
+                    <section id="contacto" className="football-grass-footer py-24 text-white text-center">
+                        <div className="max-w-4xl mx-auto px-6">
+                            <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight">Profesionaliza tu club hoy</h2>
+                            <p className="text-xl text-blue-100 mb-12 font-medium">Recupera tu tiempo y reduce impagos en menos de 15 días.</p>
+                            <div className="flex flex-col sm:flex-row justify-center gap-6">
+                                <a href="https://tally.so/r/D47EgX" className="bg-white text-blue-900 font-bold py-4 px-10 rounded-2xl shadow-xl hover:scale-105 transition text-lg">Hacer Diagnóstico</a>
+                                <a href={whatsappBase} className="bg-action-green text-white font-bold py-4 px-10 rounded-2xl shadow-xl hover:scale-105 transition text-lg">Hablar por WhatsApp</a>
+                            </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
+                </main>
                 <Footer />
             </div>
         );
